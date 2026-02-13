@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary: linear-gradient(90deg, #8b5cf6, #22d3ee);
+  --glass: rgba(255,255,255,0.12);
+  --dark: rgba(40,40,40,0.9);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+    url("../img/bg.jpg") center / cover no-repeat fixed;
+  color: #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 26px;
+  background: linear-gradient(90deg, #7c6cff, #2fd3ff);
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  backdrop-filter: blur(6px);
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 18px;
+  padding: 6px 14px;
+  background: rgba(255,255,255,.2);
+  color: #fff;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background: var(--primary);
+  color: #111;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+  transform: translateY(-1px);
+}
+
+.nav-btn.logout {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 60px auto;
+  background: var(--dark);
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.7);
+}
+
+/* ===== SECTION COMMON ===== */
+.content-section {
+  display: none !important;
+  position: relative;
+  padding: 60px 40px;
+  border-radius: 35px;
+  overflow: hidden;
+  background: url("/css/img/bg.jpg") center / cover no-repeat;
+  box-shadow: 0 35px 80px rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+}
+
+.content-section.active {
+  display: block !important;
+}
+
+/* ===== HEADER ===== */
+.card-header h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 0;
+}
+
+.card-header p {
+  text-align: center;
+  opacity: .8;
+  margin-top: 8px;
+}
+
+/* ===== FILTER ===== */
+.filter-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 80px;
+  gap: 18px;
+  margin: 30px 0;
+}
+
+.form-group {
+  background: #fff;
+  color: #111;
+  padding: 14px 18px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.btn-search {
+  border-radius: 18px;
+  background: var(--primary);
+  color: #111;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0,0,0,.4);
+  font-size: 20px;
+}
+
+/* ===== TABLE ===== */
+.table-responsive {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+thead tr {
+  background: linear-gradient(180deg, #111, #1f1f1f);
+}
+
+thead th {
+  padding: 12px;
+  font-size: 13px;
+  color: #fff;
+}
+
+tbody tr {
+  background: #fff;
+  color: #000;
+  transition: .2s ease;
+}
+
+tbody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+tbody td {
+  padding: 12px;
+  text-align: center;
+}
+
+tbody tr td:first-child { border-radius: 14px 0 0 14px; }
+tbody tr td:last-child { border-radius: 0 14px 14px 0; }
+
+/* ===== BUTTON ===== */
+.btn-main {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 40px;
+  border-radius: 999px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: var(--primary);
+  color: #111;
+  box-shadow: 0 10px 25px rgba(0,0,0,.4);
+}
+
+.btn-main:hover {
+  transform: translateY(-2px);
+  opacity: .9;
+}
+
+/* ===== EMPLOYEE ===== */
+.tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: #111;
+}
+
+.tab-content {
+  display: none !important;
+}
+
+.tab-content.active {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+  padding: 28px 32px 34px;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.65);
+}
+
+.form-grid-emp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  grid-column: 1 / -1;
+}
+
+.form-grid-emp .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-grid-emp label {
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.form-grid-emp input,
+.form-grid-emp select {
+  height: 46px;
+  border-radius: 16px;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.search-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 96px;
+  gap: 14px;
+}
+
+.readonly-box {
+  grid-column: 1 / -1;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(4px);
+  border-radius: 22px;
+  padding: 22px 24px 26px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.55);
+}
+
+@media (max-width: 768px) {
+  .filter-section,
+  .tab-content.active,
+  .form-grid-emp {
+    grid-template-columns: 1fr;
+  }
+}
+/* แก้ปัญหาตัวหนังสือหายบนพื้นหลังขาว */
+.stats-box,
+.stats-box p,
+.stats-box span,
+.stats-box b {
+  color: #111 !important;   /* บังคับให้เป็นสีเข้ม */
+}
+
+/* ถ้ามีเส้นคั่น */
+.stats-box hr {
+  border-color: #e5e7eb;
+}
+/* ปุ่มค้นหาแบบวงกลมพรีเมียม */
+.btn-search,
+#searchHistoryBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #7b61ff, #28c6f7);
+  color: #fff;
+  font-size: 22px;
+
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,.35),
+    inset 0 2px 6px rgba(255,255,255,.35);
+
+  transition: all .2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* hover ดูมีมิติ */
+.btn-search:hover,
+#searchHistoryBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.45),
+    inset 0 2px 8px rgba(255,255,255,.45);
+}
+
+/* กดแล้วจมลงนิด ๆ */
+.btn-search:active,
+#searchHistoryBtn:active {
+  transform: translateY(0) scale(0.98);
+}
+/* เอากล่องสี่เหลี่ยมหลังปุ่มค้นหาออก */
+#section-history .form-group:last-child {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* ให้ปุ่มค้นหาลอยเดี่ยว ๆ สวย ๆ */
+#section-history .btn-search,
+#section-history #searchHistoryBtn {
+  margin: auto;
+}
+/* บังคับให้ปุ่มกินเต็มแถวของ grid แล้วค่อยจัดกลาง */
+#section-employee .btn-main,
+#section-employee #saveNewEmployeeBtn {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+/* =========================
+   📱 Mobile / Tablet Responsive
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px;
+  }
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .nav-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  /* Container */
+  .container {
+    padding: 10px;
+  }
+
+  /* Card Header */
+  .card-header h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .card-header p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* Tabs (เพิ่ม / ย้าย / ลบ) */
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .tab-btn {
+    font-size: 13px;
+    padding: 8px 6px;
+    border-radius: 999px;
+  }
+
+  /* ฟอร์มเพิ่มพนักงาน */
+  .form-grid-emp {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Search row (ย้าย / ลบ) */
+  .search-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .search-row input {
+    width: 100%;
+    font-size: 14px;
+  }
+  .search-row .btn-search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 999px;
+  }
+
+  /* กล่อง readonly */
+  .readonly-box {
+    padding: 12px;
+    border-radius: 16px;
+  }
+  .readonly-box input,
+  .readonly-box select {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  /* โซนย้ายแผนก: จากแนวนอน → แนวตั้ง */
+  #tab-transfer .readonly-box > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  #tab-transfer .readonly-box > div > div {
+    width: 100%;
+  }
+  #tab-transfer .readonly-box > div > div:nth-child(2) {
+    display: none; /* ซ่อนลูกศร ➔ บนมือถือ */
+  }
+
+  /* ปุ่มหลัก */
+  .btn-main {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 999px;
+  }
+
+  /* ตาราง (เช็คชื่อ / ประวัติ) */
+  .table-responsive {
+    overflow-x: auto;
+  }
+  table {
+    font-size: 12px;
+  }
+  th, td {
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+
+  /* Filter section */
+  .filter-section {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .filter-section .form-group {
+    width: 100%;
+  }
+
+  /* ปุ่ม export */
+  #exportExcelPopupBtn,
+  #printPdfBtn {
+    width: 100%;
+  }
+
+  /* Stats (ประวัติ/รายงาน) */
+  #statsContainer > div {
+    grid-template-columns: 1fr !important;
+  }
+}
