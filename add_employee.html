@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เพิ่มข้อมูลพนักงาน</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-page">
+
+  <div class="attendance-card">
+    <h2>เพิ่มข้อมูลพนักงาน</h2>
+
+<div class="form-group">
+<label>รหัสพนักงาน</label>
+<input 
+  type="text" 
+  id="employee_code" 
+  placeholder="กรอกรหัสเป็นตัวเลขเท่านั้น"
+  oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+  required
+>
+
+
+
+<div class="name-row">
+  <div class="field">
+    <label>ชื่อ</label>
+    <input type="text" id="first_name" placeholder="ชื่อจริง" required>
+  </div>
+
+  <div class="field">
+    <label>นามสกุล</label>
+    <input type="text" id="last_name" placeholder="นามสกุล" required>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label>แผนก</label>
+  <select id="department">
+    <option value="">-- เลือกแผนก --</option>
+    <option value="IT">IT</option>
+    <option value="บัญชี">บัญชี</option>
+    <option value="บุคคล">บุคคล</option>
+    <option value="ขาย">ขาย</option>
+  </select>
+</div>
+
+<button id="saveEmployeeBtn">บันทึกข้อมูลพนักงาน</button>
+
+
+    <p id="msg"></p>
+  </div>
+
+  <script type="module" src="js/add_employee.js"></script>
+
+</body>
+</html>
